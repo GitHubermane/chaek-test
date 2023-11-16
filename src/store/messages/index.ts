@@ -6,4 +6,4 @@ const initialState = {
   messages: [] as Message[],
 };
 
-export const messageSlice = createReducer(initialState, messagesHandlers);
+export default createReducer(initialState, messagesHandlers);
