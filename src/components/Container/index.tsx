@@ -5,5 +5,5 @@ type PropsType = {
 };
 
 export const Container: FC<PropsType> = ({ children }) => {
-  return <div className="bg-white rounded-2xl max-w-xl">{children}</div>;
+  return <div className="bg-white rounded-2xl max-w-xl w-full">{children}</div>;
 };
