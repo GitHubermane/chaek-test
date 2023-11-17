@@ -1,9 +1,19 @@
-import { createReducer } from "@reduxjs/toolkit";
-import { messagesHandlers } from "./handlers";
+import { createSlice } from "@reduxjs/toolkit";
 import { Message } from "./types";
 
 const initialState = {
   messages: [] as Message[],
 };
 
-export default createReducer(initialState, messagesHandlers);
+const messagesSlice = createSlice({
+  name: "messages",
+  initialState,
+  reducers: {
+    setMessages: (state, action) => {
+      state.messages.push(action.payload);
+    },
+  },
+});
+
+export const { setMessages } = messagesSlice.actions;
+export default messagesSlice.reducer;
