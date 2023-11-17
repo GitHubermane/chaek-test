@@ -3,7 +3,7 @@ import { Button, Container } from "components";
 export const WelcomePage = () => {
   return (
     <Container>
-      <h1 className="prose-base py-4 border-b-4 text-center">
+      <h1 className="prose-base py-4 border-b-4 border-gray-100 text-center ">
         Игра в города на время
       </h1>
       <div className="p-6 text-gray-700">
