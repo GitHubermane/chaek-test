@@ -15,8 +15,10 @@ export const Input: FC<PropsType> = ({ placeholder, disabled }) => {
   const [id, setId] = useState(0);
   const [text, setText] = useState("");
 
-  const onTextChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-    useCallback(() => setText(e.currentTarget.value), []);
+  const onTextChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => setText(e.currentTarget.value),
+    [],
+  );
 
   const sendMessage = useCallback(() => {
     dispatch(setMessages({ id, isMine: true, text }));
@@ -28,7 +30,6 @@ export const Input: FC<PropsType> = ({ placeholder, disabled }) => {
     if (e.key === "Enter") {
       sendMessage();
     }
-    return;
   };
 
   const disabledStyle = disabled ? "bg-gray-400" : "";
